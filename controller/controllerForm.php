@@ -9,7 +9,7 @@ function handleForm() {
         if (!empty($login) && !empty($password)) {
             return [
                 'login' => htmlspecialchars($login),
-                'password_hashed' => password_hash($password, PASSWORD_DEFAULT),
+                'password_masked' => str_repeat("*", strlen($password)),
                 'admin' => $admin,
                 'error' => false
             ];
