@@ -1,4 +1,4 @@
-/* Réinitialisation de base */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,6 @@
 }
 
 
-/* Corps de la page */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -14,19 +13,37 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 
-/* En-tête */
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
     text-align: center;
+    margin: 1rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #333;
 }
 
 
-/* Liens */
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 2rem auto; 
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+}
+
+
 a {
     color: #007BFF;
     text-decoration: none;
@@ -37,15 +54,6 @@ a:hover {
 }
 
 
-/* Conteneur principal */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-
-/* Boutons */
 button {
     background: #007BFF;
     color: #fff;
@@ -60,11 +68,74 @@ button:hover {
 }
 
 
-/* Pied de page */
+.message {
+    padding: 1rem;
+    border: 1px solid #28a745;
+    background-color: #dff0d8;
+    color: #155724;
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+}
+
+form fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+form legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+form button {
+    background: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+form button:hover {
+    background: #c9302c;
+}
+
+
 footer {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
+    margin-top: auto;
 }
