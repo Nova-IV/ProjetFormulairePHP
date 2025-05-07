@@ -19,9 +19,19 @@ Un petit projet PHP 🐘 illustrant la gestion d'un **formulaire d'administratio
 ## 🧱 Arborescence du projet
 
 📁 ProjetFormulairePHP
+
 ├── 📁 controller
-│ └── controllerForm.php # Contrôle des données du formulaire
+
+└── controllerForm.php # Contrôle des données du formulaire
+
+│ 
+
 ├── 📁 css
-│ └── main.css # Style minimal
+
+└── main.css # Style minimal
+
+│
+
 ├── 📄 index.php # Formulaire principal
+
 └── 📄 README.md # Ce fichier
