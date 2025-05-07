@@ -14,10 +14,22 @@
     <main>
          
     <fieldset>
-        <form action="traitement.php" method="POST">
-            
+        <form method="get" action="traitement.php">
+            <label>
+                <input type="checkbox" name="admin" value="1"> Vous admin
+            </label>
+        <button type="submit">Envoyer</button>
 
-        </form>
+        <?php
+
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+                $admin = isset($_POST['admin']) ? 1 : 0;
+
+                print "<p>Valeur à enregistrer en base : " . $admin."</p>";
+            }
+        ?>
+    </form>
     </fieldset>
 
     </main>
