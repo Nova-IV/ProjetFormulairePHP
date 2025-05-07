@@ -17,7 +17,7 @@ $formData = handleForm();
         <h1>Formulaire <span>PHP</span> admin</h1>
     </header>
     <div class="container">
-        <!-- Section des messages -->
+       
         <?php if ($formData && !$formData['error']): ?>
             <div class="message">
                 <span>✔</span> Admin : <?= $formData['admin'] ? '1' : '0' ?><br>
@@ -30,7 +30,7 @@ $formData = handleForm();
             </div>
         <?php endif; ?>
 
-        <!-- Section du formulaire -->
+       
         <form method="POST" action="">
             <fieldset>
                 <legend>Remplir les champs</legend>
