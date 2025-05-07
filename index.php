@@ -25,8 +25,9 @@
         <form method="post" action="index.php">
             <label for="login">Login</label>
             <input type="email" name="login" id="login" placeholder="Votre Login" aria-required required>
-
-
+            
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" placeholder="Votre mot de passe" aria-required required>
 
             <label>
                 <input type="checkbox" name="admin" value="1"> Vous admin
