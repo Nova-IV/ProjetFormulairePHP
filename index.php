@@ -14,21 +14,26 @@
     <main>
          
     <fieldset>
-        <form method="get" action="traitement.php">
+        <?php
+            include_once 'controller/controllerForm.php';
+            print "<p>Valeur à enregistrer en base : " . $admin."</p>";
+        ?>
+        
+        <legend>
+            Remplir les champs
+        </legend>
+        <form method="post" action="index.php">
+            <label for="login">Login</label>
+            <input type="email" name="login" id="login" placeholder="Votre Login" aria-required required>
+
+
+
             <label>
                 <input type="checkbox" name="admin" value="1"> Vous admin
             </label>
         <button type="submit">Envoyer</button>
 
-        <?php
 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        
-                $admin = isset($_POST['admin']) ? 1 : 0;
-
-                print "<p>Valeur à enregistrer en base : " . $admin."</p>";
-            }
-        ?>
     </form>
     </fieldset>
 
