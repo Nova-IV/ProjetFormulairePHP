@@ -16,7 +16,10 @@
     <fieldset>
         <?php
             include_once 'controller/controllerForm.php';
-            print "<p>Valeur à enregistrer en base : " . $admin."</p>";
+            print "<p>Valeur Admin : " . $admin."</p>";
+            print "<p>Votre mail : " . $_POST['login']."</p>";
+            print "<p>Votre mot de passe : " . $_POST['password']."</p>";
+
         ?>
         
         <legend>
