@@ -1,52 +1,53 @@
+<?php
+require_once 'controller/controllerForm.php';
+
+$formData = handleForm();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire</title>
-    <link rel="stylesheet" href="./css/main.css">
-
+    <title>Formulaire PHP</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <header>
-        <h1>Formulaire Admin</h1>
+        <h1>Compléter le code <span>PHP</span> suivant</h1>
     </header>
-    <main>
-         
-    <fieldset>
-        <?php
-            include_once 'controller/controllerForm.php';
-            print "<p>Valeur Admin : " . $admin."</p>";
-            print "<p>Votre mail : " . $_POST['login']."</p>";
-            print "<p>Votre mot de passe : " . $_POST['password']."</p>";
+    <div class="container">
+        <?php if ($formData && !$formData['error']): ?>
+            <div class="message">
+                <span>✔</span> Admin : <?= $formData['admin'] ? '1' : '0' ?><br>
+                <span>✔</span> Login : <?= $formData['login'] ?><br>
+                <span>✔</span> Password (hashé) : <?= $formData['password_hashed'] ?>
+            </div>
+        <?php elseif ($formData && $formData['error']): ?>
+            <div class="message" style="color: red;">
+                <span>✖</span> Veuillez remplir tous les champs.
+            </div>
+        <?php endif; ?>
 
-        ?>
-        
-        <legend>
-            Remplir les champs
-        </legend>
-        <form method="post" action="index.php">
-            <label for="login">Login</label>
-            <input type="email" name="login" id="login" placeholder="Votre Login" aria-required required>
-            
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password" placeholder="Votre mot de passe" aria-required required>
-
-            <label>
-                <input type="checkbox" name="admin" value="1"> Vous admin
-            </label>
-        <button type="submit">Envoyer</button>
-
-
-    </form>
-    </fieldset>
-
-    </main>
-
+        <form method="POST" action="">
+            <fieldset>
+                <legend>Remplir les champs</legend>
+                <label for="login">Login</label>
+                <input type="text" id="login" name="login" placeholder="Votre login" aria-required required>
+                
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Votre mot de passe" aria-required required>
+                
+                <label>
+                    <input type="checkbox" name="admin"> Vous êtes admin 🔒
+                </label>
+                
+                <button type="submit">Envoyer</button>
+            </fieldset>
+        </form>
+    </div>
     <footer>
-        <p>
-            $copy; - PHP - 2025
-        </p>
+        <p>&copy; 2025 - Projet Formulaire PHP</p>
     </footer>
 </body>
 </html>
