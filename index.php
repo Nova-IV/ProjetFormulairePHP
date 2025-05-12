@@ -1,7 +1,7 @@
 <?php
 require_once 'controller/controllerForm.php';
 
-$formData = handleForm();
+$formData = AdminForm::handleForm();
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ $formData = handleForm();
             <div class="message">
                 <span>✔</span> Admin : <?= $formData['admin'] ? '1' : '0' ?><br>
                 <span>✔</span> Login : <?= $formData['login'] ?><br>
-                <span>✔</span> Password (hashé) : <?= $formData['password_hashed'] ?>
+                <span>✔</span> Password (hashé) : <?= $formData['password_masked'] ?><br>
             </div>
         <?php elseif ($formData && $formData['error']): ?>
             <div class="message" style="color: red;">
